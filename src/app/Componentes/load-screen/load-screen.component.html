@@ -1,0 +1,44 @@
+<div [hidden]="!helpers.startuploading">
+    <div
+     
+    >
+   
+    <div
+    class="spinner-border spin-position "
+    style="width: 15rem; height: 15rem;   color: blue;position: fixed;  z-index: 88;   "
+    role="status"
+    ></div>
+    <img
+    class="img-logo logo-position " 
+    style=" width: 15rem; position: fixed;  z-index: 88"
+    src="assets\LoadBrazo.png"
+  
+    /></div>
+  
+    <div>
+      <h1 class="a fuente"
+       
+      >
+        Loading.
+      </h1>
+      <h1 class="b fuente"
+       
+      >
+        Loading..
+      </h1>
+      <h1 class="c fuente"
+       
+      >
+        Loading...
+      </h1>
+    </div>
+    
+  <div class="fondo-opa" style="position: fixed; top: 0px; left: 0px; z-index: 50; ">
+  
+        </div>
+
+        <div [hidden]="load.Vencido" style="z-index: 999; position: fixed; left: 15%; top: 10%;" >
+        <a style="font-size: 2cm; color: red;"> Vencio su tiempo de prueba</a>
+        </div>
+  </div>
+  

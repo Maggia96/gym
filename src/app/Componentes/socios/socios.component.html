@@ -1,0 +1,173 @@
+
+<app-modal-cliente (reload)="cargarclientes()"></app-modal-cliente>
+<div
+
+
+(document:keydown.a.g)="next()" 
+  class="my-3 p-3 bg-white rounded shadow-sm"
+  style="  margin-top:0!important;"
+>
+
+
+  <div class="encabezado" style="justify-content: space-between;">
+    <div class="nuevo-cliente">
+      <img
+        class="zoomBoton pointer nuevo-img"
+        src="assets\nuevoCliente.png"
+        (click)="nuevoCliente()"
+        data-toggle="modal"
+        data-target="#modalCliente"
+      />
+    </div>
+
+    <h1 class="titulo ">Socios</h1>
+
+
+    <button class="btn btn-success" (click)="cargarclientesActivos()" >
+      Activos
+    </button>
+    <button class ="btn btn-danger" (click)= "cargarAllClientes()" >
+      Vencidos
+    </button>
+
+
+    <div class="buscador" style="    display: flex;
+    place-content: space-around space-between;
+    align-items: center;" >
+      <div *ngIf="helper.lista" style="margin-right: 10px;">
+        <img
+        style="width: 50px;"       
+          class="zoomBoton pointer nuevo-img"
+          src="assets\vistacard.png"
+          (click)="verListado()"
+        />
+      </div>
+
+      <div *ngIf="!helper.lista" style="margin-right: 10px;">
+        <img
+          style="width: 50px;"
+          class="zoomBoton pointer nuevo-img"
+          src="assets\listView.png"
+          (click)="verListado()"
+        />
+      </div>
+      <input
+      style="width: 100%;"
+        [(ngModel)]="buscarDni"
+        class="form-control mr-sm-2 buscar"
+        type="text"
+        placeholder="Filtrar"
+        aria-label="Search"
+        maxlength="15"
+        (keyup.enter)="buscarPorDni()"
+       
+      />
+
+      <img
+        class="botones zoomBoton"
+        (click)="buscarPorDni()"
+        src="assets\buscar.png"
+      />
+    </div>
+  </div>
+
+  <div class="container" *ngIf="helper.lista">
+    <div *ngFor="let cliente of client">
+      <div
+        class="media text-muted pt-3 zoomBoton"
+        (click)="modificarCliente(cliente)"
+        data-toggle="modal"
+        data-target="#modalCliente"
+        style="cursor:pointer; "
+      >
+        <img src="assets\{{cliente.path}}" class="foto-cliente " />
+        <p
+          style="font-size: larger"
+          class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray"
+        >
+          <strong class="d-block text-gray-dark nombre "
+            >{{ cliente.apellido }} {{ cliente.nombre }}</strong
+          >
+          <small class="responsive">
+            - DNI : {{ cliente.dni }} - Celular : {{ cliente.telefono }} - Email
+            : {{ cliente.email }}
+          </small>
+        </p>
+        <small class="d-block text-right mt-3 ">
+          <div class="botones-cliente">
+            
+            <img
+              class="botones"
+              (click)="modificarCliente(cliente)"
+              data-toggle="modal"
+              data-target="#modalAccesos"
+              routerLink="/accesos/{{ cliente._id }}"
+              src="assets\accesos.png"
+            />
+          </div>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="!helper.lista">
+    <div class="row">
+      <div
+        *ngFor="let cliente of client"
+        class="col-md-3 zoomBoton"
+        style="margin-bottom: 5px; cursor: pointer;"
+      >
+        <div class="card mb-3 shadow-sm">
+          <div class="card-header text-center" style="background-color: white;">
+            <h5 class=" text-gray-dark  ">
+              {{ cliente.apellido }}
+            </h5>
+          </div>
+          <img
+            src="assets\{{cliente.path}}"
+            style="width: 100%;"
+            (click)="modificarCliente(cliente)"
+            data-toggle="modal"
+            data-target="#modalCliente"
+          />
+
+          <div class="card-body ">
+            <div class="prueba">
+             
+
+              <button
+              hidden
+                type="button"
+                style="margin-left: 7px;"
+                class="btn  btn-block btn-outline-primary"
+                (click)="modificarCliente(cliente)"
+                data-toggle="modal"
+                data-target="#modalAccesos"
+                routerLink="/accesos/{{ cliente._id }}"
+              >
+                Accesos
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paginacion">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li [hidden]="pageButton" class="page-item" (click)="previous()">
+          <button style="margin-right: 20px;" class="page-link pointer">Anterior</button>
+        </li>
+
+        <li [hidden]="!nextButton" class="page-item">
+          <button class="page-link pointer"  (click)="next()">Siguiente</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+

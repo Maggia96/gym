@@ -1,0 +1,114 @@
+<div
+  class="modal fade"
+  data-backdrop="static"
+  [id]="modalId"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modelTitleId"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content" >
+        <app-load-screen></app-load-screen>
+      <div class="modal-header">
+        <h5 class="modal-title">Ingreso Socio</h5>
+        <button
+          (click)="limpiar()"
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div
+          class="form group"
+          style="display: flex; justify-content: space-between;"
+        >
+          <div>
+            <input
+              #inputDni
+              style="width: 110%;"
+              class="form-control text-center "
+              [(ngModel)]="dni"
+              type="text"
+              name="dni"
+              required
+              placeholder="DNI"
+              maxlength="8"
+              (keyup.enter)="Buscar()"
+              (keypress)="onlyNumberKey($event)"
+            />
+          </div>
+
+          <div class="buscar-img">
+            <img
+              class="buscar-img"
+              src="assets\buscar.png"
+              (click)="Buscar()"
+            />
+          </div>
+        </div>
+
+        <div>
+          <img class="foto-socio" src="assets\{{ fotoUrl }}" />
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center">
+        <label
+          align="center"
+          style="color:green; font-size: larger"
+          [hidden]="debeCuotaSocio"
+        >
+          {{ nombre }}
+        </label>
+
+        <label
+          align="center"
+          style="color:red; font-size: larger"
+          [hidden]="!debeCuotaSocio"
+        >
+          {{ nombre }} debe cuota</label
+        >
+      </div>
+
+      <div class="botones">
+        <button
+          class="zoomBoton"
+          class="btn btn-success btn-block "
+          (click)="Registrar()"
+          [hidden]="cuotaServicio.creandoCuotaNueva || true"
+        >
+          Registrar Ingreso
+        </button>
+
+        <button
+          class="zoomBoton"
+          data-dismiss="modal"
+          class="btn btn-primary btn-block "
+          [hidden]="ocultar"
+          data-toggle="modal"
+          data-target="#modalCuota"
+          (click)="generarCuota()"
+        >
+          Generar Cuota
+        </button>
+
+        <button
+          class="zoomBoton"
+          data-dismiss="modal"
+          class="btn btn-danger btn-block "
+          (click)="limpiar()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal-pagos (reload)="ngOnInit()"></app-modal-pagos>
+

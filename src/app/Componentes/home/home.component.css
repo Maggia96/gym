@@ -1,0 +1,237 @@
+.zoom{
+    opacity: 0.8;
+     transition: transform 1.5s;
+}
+.zoom:hover{
+    opacity: 1;
+     transform: scale(1.5);
+}
+
+
+.zoom-fondo{
+    transition: transform 1.5s;
+}
+.zoom-fondo:hover{
+    transform: scale(1.08);
+}
+
+
+.img-ingreso{
+   
+    position: fixed; 
+    width: 12%;
+    height: auto;
+    left: 85%;
+    top: 75%;
+}
+
+
+@media(max-width:900px) {
+    .img-ingreso {
+        position: fixed; 
+        width: 20%;
+        height: auto;
+        left: 75%;
+        top: 70%;
+    }
+  }
+
+  @media(max-width:550px) {
+    .img-ingreso {
+        position: fixed; 
+        width: 25%;
+        height: auto;
+        left: 70%;
+        top: 80%;
+    }
+  }
+
+.fondo-movil{
+
+
+    display: none;
+}
+@media(max-width:992px) {
+    .fondo-movil{
+
+
+        display: block;
+    }
+  }
+
+
+  .fondo-web{
+
+
+    display: block
+}
+@media(max-width:992px) {
+    .fondo-web{
+
+
+        display: none;
+    }
+  }
+
+
+
+  div.bar {
+    background-position: center center;
+    animation: shrink 50s infinite alternate;
+  }
+  @keyframes shrink {
+    0% {
+      width: 2%;
+    }
+  
+    100% {
+        width: 100%;
+      }
+  }
+  
+  
+  @media(min-width:1000px)
+  {img.img {
+    
+      background-size: 100% 100%;
+      
+     background-image: url(src\assets\loadfondo3.jpg);
+      background-position: center center;
+      animation: prueba 200s infinite alternate;
+  }
+      @keyframes prueba {
+  
+        0% {
+          background-size: 100% 100%;
+          background-image: url(src\assets\loadfondo3.jpg);
+        }
+    15% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo9.jpg);
+    }
+    30% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo2.jpg);
+    }
+    45% {
+      background-size: 100%100;
+      background-image: url(src\assets\loadfondo8.jpg);
+    }
+    65% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo7.jpg);
+    }
+    80% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo2.jpg);
+    }
+    90% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo6.jpg);
+    }
+    100% {
+      background-size: 100%100;
+      background-image: url(src\assets\loadfondo4.jpg);
+    }
+   
+  
+  }
+  }
+  
+  @media(max-width:999px)
+  {
+    img.img {
+        height: 100vh;
+        background-size: 100% 100%;
+        
+       background-image: url(src\assets\loadfondo7A.jpg);
+        background-position: center center;
+        animation: prueba 20s infinite alternate;
+    }
+        @keyframes prueba {
+    
+  
+      25% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\loadfondo7A.jpg);
+      }
+      50% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\Loadfondo2A.jpg);
+      }
+      75% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\fondoResponsivo4.jpg);
+      }
+      100% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\loadfondo9A.jpg);
+      }
+    
+    }
+  }
+
+  @media(max-width:700px)
+  {
+    img.img {
+        height: 100vh;
+        background-size: 100% 100%;
+        
+       background-image: url(src\assets\fondoResponsivo4.jpg);
+        
+        animation: prueba 20s infinite alternate;
+    }
+        @keyframes prueba {
+    
+  
+      25% {
+        background-size: 100% 100%;
+        
+        background-image: url(src\assets\fondoResponsivo4.jpg);
+      }
+      50% {
+        background-size: 100% 100%;
+          background-image: url(src\assets\fondoResponsivo2.jpg);
+      }
+      75% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\fondoResponsivo.jpg);
+      }
+      100% {
+        background-size: 100% 100%;
+        background-image: url(src\assets\fondoResponsivo4.jpg);
+      }
+    
+    }
+  }
+  
+  
+  @media(min-width:701px)
+  {img.img-logo {
+    position: fixed;
+    top: 4.5%;
+    left: 92%;
+    transform: scale(1.4);
+      animation: prueba1 1s infinite alternate;
+  }
+      @keyframes prueba1 {
+  
+  
+  100% {
+    transform: scale(1.1);
+    
+  }
+  
+  }
+  }
+  
+  .scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  
+  
+     }
+  #style-1::-webkit-scrollbar {
+    width: 6px;
+    background-color:transparent;
+} 

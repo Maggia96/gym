@@ -1,0 +1,68 @@
+<body   style="background-color: black !important">
+    <form name="form" #form="ngForm">
+      <div style="position: relative;">
+        <img
+          class="zoom-fondo imagen-web"
+          style="  
+         width: 100%;
+         height: auto;"
+          src="assets\loadfondo6.jpg"
+        />
+  
+        <img
+          class="zoom-fondo imagen-movil"
+          style="  
+  width: 100%;
+  height: auto;"
+          src="assets\fondoResponsivo2.jpg"
+        />
+  
+        <div align="center" class="log">
+          <div>
+            <img class="zoom-logo logo-imagen " src="assets\gymLogoBrazo.png" >
+          </div>
+  
+          <div>
+            <input
+              name="usuario"
+              [(ngModel)]="usuario"
+              class="text-center  "
+              autofocus
+              style="margin-top :20px; font-size: 0.6cm; border-radius: 9px; height: 30px;  width: 75% "
+              type="text"
+              placeholder="Usuario"
+              required
+            />
+          </div>
+  
+          <div>
+            <input
+              name="password"
+              [(ngModel)]="Password"
+              class="text-center "
+              style=" border-radius: 9px; margin-top :20px; font-size: 0.6cm; height: 30px; width: 75%"
+              type="password"
+              placeholder="Clave"
+              required
+            />
+          </div>
+  
+          <div>
+            <button
+              [hidden]="form.invalid"
+              [disabled]="form.invalid"
+             
+              style="margin-top: 20px; width: 75% ; border-radius: 18px; "
+              class="btn-primary btn-block btn-lg "
+               (click)="Acceder()"
+            >
+              Acceder
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      
+    </form>
+  </body>
+  

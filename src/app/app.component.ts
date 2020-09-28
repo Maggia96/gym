@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HelpersServiceService } from './servicios/helpers-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Gym-Php';
+  constructor(private root: Router , public helper : HelpersServiceService){
+
+  }
+  ngOnInit(){
+    this.root.navigate(["login"])
+  }
 }

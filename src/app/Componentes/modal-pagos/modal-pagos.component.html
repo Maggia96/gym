@@ -1,0 +1,131 @@
+<div
+  class="modal fade"
+  data-backdrop="static"
+  id="modalCuota"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modelTitleId"
+  aria-hidden="true" 
+  style="overflow: auto"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <app-load-screen></app-load-screen>
+        
+      <div class="modal-header">
+        <h5 class="modal-title">Generar Cuota</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="salir()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 user-photo">
+            <div>
+              <img
+                class="zoomBoton "
+                src="assets\{{clienteService.clienteSeleccionado.path}}"
+              />
+
+              <br />
+
+              <div class="btn-delete mt-4 text-center"></div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <form name="form" #form="ngForm">
+              
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Monto</label>
+
+                  <input
+                    class="h5 mb-3 form-control text-center"
+                    name="monto"
+                    [(ngModel)]="cuota.precio"
+                    type="number"
+                 
+                    required
+                  />
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Observacion</label>
+                  <input
+                    class="h5 mb-3 form-control text-center"
+                    name="Observacion"
+                    [(ngModel)]="cuota.observacion"
+                    type="text"
+                    required
+                    maxlength="150"
+                    
+                    
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Fecha Desde</label>
+
+                  <input
+                    class="h5 mb-3 form-control text-center"
+                    name="fechaDesde"
+                    [(ngModel)]="cuota.fechaPago"
+                    type="date"
+                    required
+                  />
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Fecha Hasta</label>
+                  <input
+                    class="h5 mb-3 form-control text-center"
+                    name="fechaHasta"
+                    [(ngModel)]="cuota.Vencimiento"
+                    type="date"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer buttons">
+        <div 
+          class="buttons"
+          style=" display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: flex-end;"
+         
+        >
+          <button
+        
+            class="btn btn-primary"
+            [disabled]="form.invalid"
+            (click)="crearCuota()"
+            
+          >
+            Guardar
+          </button>
+        </div>
+        <div>
+          <h3 style="    display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;">Total: ${{cuota.precio}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

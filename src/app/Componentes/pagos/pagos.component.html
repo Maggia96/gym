@@ -1,0 +1,167 @@
+<app-modal-pagos (reload)="ngOnInit()"></app-modal-pagos>
+
+<app-modal-registrar-ingreso #registro></app-modal-registrar-ingreso >
+<div
+  class="my-3 p-1 bg-white rounded shadow-sm"
+  style="  margin-top:0!important; "
+>
+  <div
+    class="encabezado"
+    style="margin-top: 5px; justify-content: space-between;"
+  >
+    <img
+      [hidden]="busquedaPorCliente"
+      class="zoomBoton nuevo-img"
+      src="assets\new.png"
+      (click)="modal.open()"
+      (click)="crearCuotaNueva()"
+    />
+
+    <h3 [hidden]="busquedaPorCliente" class="titulo">
+      Ingresos del dia: ${{ total }}
+    </h3>
+
+    <img
+      [hidden]="!busquedaPorCliente"
+      class=""
+    src="assets\{{clienteServicio.clienteSeleccionado.path}}"
+    
+      style=" width:120px;"
+    />
+
+    <h3 [hidden]="!busquedaPorCliente" class="titulo">
+      {{
+        clienteServicio.clienteSeleccionado.nombre +
+          " " +
+          clienteServicio.clienteSeleccionado.apellido
+      }}
+    </h3>
+
+    <div class="buscador">
+      <img
+        style="margin-right: 10px;"
+        [hidden]="busquedaPorCliente"
+        class="zoomBoton nuevo-img"
+        src="assets\refresh.png"
+        (click)="cargarPagos()"
+      />
+
+      <input
+        maxlength="4"
+        minlength="4"
+        [(ngModel)]="anio"
+        style="width: 50px; margin-right: 20px; height: 37px; border-radius: 5px;"
+        placeholder="  Año"
+        (keypress)="onlyNumberKey($event)"
+      />
+
+      <input
+        [(ngModel)]="buscarDni"
+        class="form-control mr-sm-2 buscar"
+        style="width: 120px;"
+        type="text"
+        placeholder="DNI"
+        (keyup.enter)="buscarCuotasSocio()"
+        aria-label="Search"
+        (keypress)="onlyNumberKey($event)"
+        maxLength="8"
+      />
+
+      <img
+        class="botones zoomBoton"
+        (click)="buscarCuotasSocio()"
+        src="assets\buscar.png"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="!eliminarConsulta" class="container">
+    <div class="row">
+      <div
+        *ngFor="let cuota of cuotasPagadas"
+        class="col-md-6 zoomBoton"
+        style="margin-bottom: 5px; cursor: pointer;"
+      >
+        <div class="card mb-3 shadow-sm">
+          <div class="card-header text-center" style="background-color: white;">
+            <h5 class=" text-gray-dark  ">
+              {{cuota.nombre}} {{cuota.apellido}}
+            </h5>
+          </div>
+
+          <div class="card-body">
+            <ul>
+              <li>
+                 Observacion:
+               {{ cuota.observacion  }}
+             </li>
+              <li>
+                Inicio: {{ cuota.fechaPago |   date:'longDate':'+0200':'es'}}
+              </li>
+              <li>
+                 Vencimiento:
+                {{ cuota.Vencimiento |  date:'longDate':'+0200':'es'}}
+              </li>
+              <li>Total: ${{ cuota.precio }}</li>
+           
+            
+            </ul>
+            <button
+              *ngIf="cuota.Anulada == 0"
+              type="button"
+              class="btn btn-lg btn-block btn-outline-danger"
+              (click)="mensajeELiminar(cuota)"
+            >
+              Anular
+            </button>
+            <div style="display: flex; justify-content: flex-end;">
+              <label
+                class="text-center"
+                *ngIf="cuota.Anulada == 1"
+                style="color: red;"
+                >Anulada</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="height: 30vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;"
+    *ngIf="eliminarConsulta"
+    id="mensaje"
+  >
+    <div>
+      <label class="anular-label">Seguro que desea anular la cuota? </label>
+
+      <div
+        style="display: flex;
+    flex-direction: row;
+
+   justify-content: space-around;"
+      >
+        <button
+          style="margin-right: 10px; width: 40%;"
+          class="btn btn-danger"
+          (click)="anular()"
+        >
+          Anular
+        </button>
+
+        <button
+          class="btn btn-primary"
+          style="width: 40%;"
+          (click)="cancelar()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

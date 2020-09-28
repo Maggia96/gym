@@ -1,0 +1,301 @@
+div.bar {
+    background-position: center center;
+    animation: shrink 50s infinite alternate;
+  }
+  @keyframes shrink {
+    0% {
+      width: 2%;
+    }
+  
+    100% {
+        width: 100%;
+      }
+  }
+  
+  
+  @media(min-width:701px)
+  {img.img {
+      height: 100vh;
+      background-size: 100% 100%;
+      
+     background-image: url(src\assets\loadfondo3.jpg);
+      background-position: center center;
+      animation: prueba 25s infinite alternate;
+  }
+      @keyframes prueba {
+  
+  
+    25% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo3.jpg);
+    }
+    50% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo2.jpg);
+    }
+    75% {
+      background-size: 100%100;
+      background-image: url(src\assets\loadfondo4.jpg);
+    }
+    100% {
+      background-size: 100% 100%;
+      background-image: url(src\assets\loadfondo3.jpg);
+    }
+  
+  }
+  }
+  
+  @media(max-width:700px)
+  {
+    img.img {
+        height: 100vh;
+        background-size: 100% 100%;
+        
+       background-image: url(src\assets\fondoResponsivo.jpg);
+        background-position: center center;
+        animation: prueba 25s infinite alternate;
+    }
+        @keyframes prueba {
+    
+  
+      25% {
+        background-size: 100% 95%;
+        background-image: url(src\assets\fondoResponsivo.jpg);
+      }
+      50% {
+        background-size: 100% 95%;
+        background-image: url(src\assets\fondoResponsivo2.jpg);
+      }
+      75% {
+        background-size: 100%95;
+        background-image: url(src\assets\fondoResponsivo4.jpg);
+      }
+      100% {
+        background-size: 100% 95%;
+        background-image: url(src\assets\fondoResponsivo.jpg);
+      }
+    
+    }
+  }
+  
+  
+  @media(min-width:601px)
+  {img.img-logo {
+   
+    transform: scale(1.4);
+      animation: prueba1 1s infinite alternate;
+  }
+      @keyframes prueba1 {
+  
+  
+  100% {
+    transform: scale(1.1);
+    
+  }
+  
+  }
+  }
+  
+  
+  
+  h1.a {
+   
+     
+      animation: lablaload1 0.2s infinite alternate;
+  }
+      @keyframes lablaload1 {
+  0%{
+    visibility: visible;
+  }
+        
+  33% {
+    visibility: visible;
+  }
+  
+  66% {
+   visibility: hidden;
+    
+  }
+  
+  100% {
+    visibility: hidden;
+    
+  }
+  
+  }
+  
+  h1.b {
+   
+  
+    animation: lablaload2 0.2s infinite alternate;
+  }
+    @keyframes lablaload2 {
+      0%{
+        visibility: hidden;
+      }    
+      
+  33% {
+  visibility: hidden;
+  
+  }
+  
+  66% {
+  visibility: visible;
+  }
+  
+  100% {
+  visibility: hidden;
+  
+  }
+  
+  }
+  
+  h1.c {
+   
+  
+    animation: lablaload3 0.2s infinite alternate;
+  }
+    @keyframes lablaload3 {
+  
+      0%{
+        visibility: hidden;
+      }
+      
+  33% {
+  visibility: hidden;
+  }
+  
+  66% {
+  visibility: hidden;
+  }
+  
+  100% {
+  visibility: visible;
+  }
+  
+  }
+  .fuente{
+    position: fixed; top: 88%; left: 84%; z-index: 88; color: white;
+  }
+  
+  @media(max-width:1100px)
+  {
+     .fuente{
+       font-size: xx-large;
+     }
+  }
+  @media(max-width:900px)
+  {
+     .fuente{
+       
+      top: 90%; left: 80%;
+     }
+  }
+  @media(max-width:700px)
+  {
+     .fuente{
+      top: 90%; left: 75%;
+     }
+  }
+  @media(max-width:600px)
+  {
+     .fuente{
+      top: 90%; left: 71%;
+     }
+  }
+  @media(max-width:500px)
+  {
+     .fuente{
+      top: 90%; left: 61%;
+     }
+  }
+  
+  
+  .fondo-opa{
+    width: 100%;
+    background-color: black; opacity: 1;
+    height: 100%;
+  }
+  
+  @media(min-width:500px)
+  {
+     .fondo-opa{
+      background-color:black; opacity: 0.9;
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+     }
+  }
+  
+  
+  .logo-position{
+    top: 30%; left: 40.7%;
+  }
+  
+  @media(max-width:900px)
+  {
+     .logo-position{
+      top: 30%; left: 36.2%
+     }
+  }
+  @media(max-width:750px)
+  {
+     .logo-position{
+      top: 30%; left: 33.2%
+     }
+  }
+  @media(max-width:610px)
+  {
+     .logo-position{
+      top: 30%; left: 29.2%
+     }
+  }
+  @media(max-width:450px)
+  {
+     .logo-position{
+      top: 30%; left: 22.7%
+     }
+  }
+  .spin-position{
+    top: 26%; left: 41%;
+  }
+  @media(max-width:400px)
+  {
+     .logo-position{
+      top: 30%; left: 18.7%
+     }
+  }
+  .spin-position{
+    top: 26%; left: 41%;
+  }
+  
+  @media(max-width:900px)
+  {
+     .spin-position{
+      top: 26%; left: 36.7%
+     }
+  }
+  @media(max-width:750px)
+  {
+     .spin-position{
+      top: 26%; left: 33.7%
+     }
+  }
+  @media(max-width:610px)
+  {
+     .spin-position{
+      top: 26%; left: 29.7%
+     }
+  }
+  @media(max-width:450px)
+  {
+     .spin-position{
+      top: 26%; left: 23.2%
+     }
+  }
+  @media(max-width:400px)
+  {
+     .spin-position{
+      top: 26%; left: 19.2%
+     }
+  }

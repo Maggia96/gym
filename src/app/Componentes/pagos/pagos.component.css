@@ -1,0 +1,103 @@
+.zoomBoton {
+    transition: transform 0.5s;
+  }
+  .zoomBoton:hover {
+    transform: scale(1.1);
+  }
+  
+  .botones {
+    width: 60px;
+    margin-right: 10px;
+  }
+  @media (max-width: 550px) {
+    .botones {
+      width: 45px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .botones {
+      width: 30px;
+    }
+  }
+  
+  .buscar {
+    width: 15%;
+    float: right;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 720px) {
+    .buscar {
+      width: 30%;
+      float: right;
+    }
+  }
+  
+  .nombre {
+    font-size: xx-large;
+  }
+  
+  @media (max-width: 550px) {
+    .nombre {
+      font-size: large;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 310px) {
+    .nombre {
+      font-size: xx-small;
+    }
+  }
+  
+  
+  
+  @media (max-width: 550px) {
+    .titulo {
+      margin-top: 20px;
+      font-size: large;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .titulo {
+      margin-top: 20px;
+      font-size: medium;
+    }
+  }
+  
+  
+  
+  @media (max-width: 550px) {
+    .nuevo-img {
+      float: left;
+      width: 65px;
+     
+      border-color: cornflowerblue;
+    }
+  }
+  
+  .nuevo-img {
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  .anular-label{
+    font-size: 0.8cm;
+  }
+  
+  @media (max-width: 650px) {
+   
+  .anular-label{
+    font-size: 0.5cm;
+  }
+  
+  }
+  @media (max-width: 330px) {
+   
+    .anular-label{
+      font-size: 0.4cm;
+    }
+    
+    }

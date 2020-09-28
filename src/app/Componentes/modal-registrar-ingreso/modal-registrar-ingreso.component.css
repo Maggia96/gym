@@ -1,0 +1,24 @@
+.buscar-img {
+    width: 40px;
+  
+}
+
+.foto-socio{
+    width: 100%;
+    border-radius: 20%;
+    padding-bottom: 5px;
+    padding-top: 17px;
+}
+.botones-container{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.botones{
+   
+   margin-right: 3%;
+   margin-left: 3%;
+   margin-bottom: 2%;
+}

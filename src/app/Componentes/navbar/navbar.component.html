@@ -1,0 +1,155 @@
+
+
+<app-modal-registrar-ingreso #registro></app-modal-registrar-ingreso >
+
+<link
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+  crossorigin="anonymous"
+/>
+
+<nav
+  class="navbar navbar-icon-top navbar-expand-lg navbar-dark  "
+  style="position: fixed; z-index: 3; width: 100%; background: rgb(50,60,60);"
+>
+  <div  style="cursor: pointer;"  >
+    <img
+      src="assets\gymLogoBody3.png"
+       style="width: 70px;"
+      
+       (click)="modal.open()"
+      class="d-inline-block align-top zoomBoton"
+    />
+  </div>
+  <a class="navbar-brand" style="color: white; font-size:1cm;">GYM</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse items-nav" id="navbarSupportedContent">
+    <ul  class="navbar-nav mr-auto" >
+      <li  (click)=" ocultarIconoActual('home'); " 
+      *ngIf="iconoActual != 'home'"
+        class="nav-item active"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <a  routerLink="/home" class="nav-link" href="#">
+          <i class="fa fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li (click)="iniciar(); ocultarIconoActual('socio'); "
+      *ngIf="iconoActual != 'socio'"
+        class="nav-item active "
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+       
+        >
+        <a
+         
+          routerLink="/cliente"
+          class="nav-link"
+          href="#"
+        >
+          <i class="fa fa-users"> </i>
+          Socios
+        </a>
+      </li>
+      <li (click)="iniciar(); ocultarIconoActual('pagos');"
+      *ngIf="iconoActual != 'pagos'"
+        class="nav-item active"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <a  routerLink="/pagos" class="nav-link" href="#">
+          <i class="fa fa-dollar"> </i>
+          Pagos
+        </a>
+      </li>
+      <li hidden (click)="iniciar(); ocultarIconoActual('cuotas');"
+      *ngIf="iconoActual != 'cuotas'"  
+      class="nav-item active"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <a
+          routerLink="/conceptoCuota"
+          class="nav-link"
+          href="#"
+        >
+          <i class=" fa fa-file"></i>
+
+          Cuotas
+        </a>
+      </li>
+      
+      <li  (click)="iniciar(); ocultarIconoActual('notifiacar');"
+      *ngIf="iconoActual != 'notifiacar'"
+      class="nav-item active"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+    >
+      <a
+        
+        routerLink="/notificar"
+        class="nav-link"
+        href="#"
+      >
+        <i class="fa fa-paper-plane"></i>
+
+        Notificar
+      </a>
+    </li>
+
+      <li  (click)="iniciar(); ocultarIconoActual('estadisticas');"
+      *ngIf="iconoActual != 'estadisticas'"
+        class="nav-item active" 
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <a
+        
+          routerLink="/estadisticas"
+          class="nav-link"
+          href="#"
+        >
+          <i class="fa fa-link"></i>
+
+          Estadisticas
+        </a>
+    </li>
+    
+    
+      <li (click)="iniciar();"
+        class="nav-item active "
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+      >
+        <a
+          (click)="CerrarSession()"
+          class="nav-link"
+          href="#"
+          onclick="return false"
+        >
+          <i class="fa fa-sign-out"> </i>
+          Salir
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div style="height: 80px;"   ></div>
+
+
+
+

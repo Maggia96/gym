@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
+
+@media (min-width: 770px) {
+  .zoomBoton {
+  transition: transform 0.5s;
+}
+.zoomBoton:hover {
+  transform: scale(1.1);
+}
+
+}
+
+
+.encabezado {
+  margin-bottom: 2%;
+
+
+  display: flex;
+  align-items: center;
+  place-content: space-around;
+  flex-direction: row;
+
+
+}
+ 
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .buscador {
+    
+    display: flex;
+    align-items: flex-end;
+  }
+    img {
+      width: 40px;
+    }
+
+    input {
+      width: 100%;
+    }
+  
+
+.encabezado2{
+  margin-bottom: 2%;
+  margin-right: 1%;
+  margin-left: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+}

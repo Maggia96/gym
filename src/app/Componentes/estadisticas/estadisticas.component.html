@@ -1,0 +1,28 @@
+<div>
+      
+        
+    <div [hidden] = "!tipoIngreso"
+    style="width: 80%;  margin-left: 10%; ; margin-top: 10px; position: fixed; z-index: 1;   " 
+    ><canvas id="canvas"></canvas></div>
+    
+  
+    
+    <div style="position: relative">
+    
+            <img class="fondo-movil" style="width: 100%;
+            height: auto;" src="assets\fondoResponsivo2.jpg">
+    
+    
+            <img class="fondo-web" style="  
+             width: 100%;
+             height: auto;" src="assets\gymfondo.jpg">
+    
+    
+    </div>
+    
+    <div hidden>
+        <img src = "assets\refresh.png" width="80px" (click) = "cambiarGrafica()" style="position: fixed; z-index: 2; left: 90%; top: 85%;">
+    </div>
+    </div>
+    
+  

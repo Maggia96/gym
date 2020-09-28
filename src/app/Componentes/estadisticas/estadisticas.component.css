@@ -1,0 +1,26 @@
+.fondo-movil{
+
+
+    display: none;
+}
+@media(max-width:992px) {
+    .fondo-movil{
+
+
+        display: block;
+    }
+  }
+
+
+  .fondo-web{
+
+
+    display: block
+}
+@media(max-width:992px) {
+    .fondo-web{
+
+
+        display: none;
+    }
+  }
